@@ -1,0 +1,76 @@
+.x-input-wrap {
+  width: 100%;
+  padding: 0 16px;
+}
+.x-input {
+  width: 100%;
+  min-height: 42px;
+  display: flex;
+  justify-content: space-between;
+}
+.disabled {
+  cursor: no-drop;
+  color: @disabled;
+}
+.border {
+  .border_1px(bottom);
+}
+.x-input-label {
+  text-align: center;
+  color: @labelColor;
+	font-size: 16px;
+	margin-right: 16px;
+	
+}
+.x-input-content {
+  background-color: #fff;
+  line-height: 42px;
+	flex: 1;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	color: @mainColor;
+  > input {
+		flex: 1;
+		line-height: 42px;
+		font-size: 16px;
+		min-width: 80px;
+		margin-right: 8px;
+		&::placeholder {
+			color: @subColor;
+		}
+  }
+}
+.x-input-textarea-wrap {
+	width: 100%;
+	position: relative;
+}
+.x-input-textarea {
+	width: 100%;
+	height: 80px;
+	border: none;
+	resize: none;
+	outline: none;
+	font-size: 16px;
+	&::placeholder {
+		color: @placeholderColor;
+	}
+}
+.x-input-textarea-length {
+	position: absolute;
+	right: 10px;
+	bottom: -8px;
+	color: @textColor;
+	font-size: 14px;
+}
+.x-input-icon {
+	padding: 0 10px;
+	cursor: pointer;
+}
+.x-textarea-icon {
+	padding: 10px;
+	display: block;
+}
+.x-input-extra {
+	line-height: 42px;
+}

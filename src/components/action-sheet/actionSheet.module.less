@@ -1,0 +1,66 @@
+.x-actionsheet {
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	border-top-left-radius: 16px;
+	border-top-right-radius: 16px;
+	background-color: #f7f8fa;
+	transition: transform .3s;
+	overflow: hidden;
+}
+.x-actionsheet-title {
+	text-align: center;
+	font-size: 16px;
+	color: @textColor;
+	line-height: 1.2rem;
+	background-color: #ffffff;
+	.border_1px(bottom);
+}
+.x-actionsheet-content {
+	background-color: #ffffff;
+	min-height: 1.6rem;
+	max-height: 4.8rem;
+	overflow-y: scroll;
+	padding: 0px .4rem;
+	&::-webkit-scrollbar{
+		width: 0;
+		display: none;
+	}
+}
+.actionsheet-content-item {
+	text-align: left;
+	font-size: 14px;
+	line-height: 36px;
+	padding: 0 12px;
+	color: @textColor;
+	&:active {
+		background-color: #f7f8fa;
+	}
+}
+.disabled {
+	color: @disabled;
+	cursor: no-drop;
+	&:active {
+		background-color: #ffffff;
+	}
+}
+.x-actionsheet-footer {
+	background-color: #ffffff;
+	margin-top: 8px;
+	font-size: 16px;
+	text-align: center;
+	line-height: 48px;
+	&:active {
+		background-color: #f7f8fa;
+	}
+}
+:global {
+	.sheet-slide-enter {
+		transform: translateY(100%);
+	}
+	.sheet-slide-leave-active {
+		transform: translateY(100%);
+	}
+}
+

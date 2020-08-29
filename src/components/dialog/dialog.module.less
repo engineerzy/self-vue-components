@@ -1,0 +1,60 @@
+.x-dialog-content {
+	position: fixed;
+	top: 45%;
+	left: 50%;
+	transform: translate3d(-50%, -50%, 0);
+	width: 86%;
+	background-color: #ffffff;
+	padding-top: .16rem;
+	border-radius: 12px;
+	transition: .3s;
+  transition-property: transform, opacity;
+}
+.dialog-content-title {
+	text-align: center;
+	font-size: 18px;
+	color: @mainColor;
+	line-height: 36px;
+	padding-top: 0.12rem;
+}
+.dialog-content-main {
+	min-height: .6rem;
+	padding: .48rem .3rem .56rem;
+	color: @textColor;
+	text-align: center;
+	font-size: 16px;
+}
+.dialog-content-footer {
+	height: 48px;
+	line-height: 48px;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	font-size: 16px;
+	.border_1px(top);
+}
+.dialog-footer-cancel {
+	height: 100%;
+	flex: 1;
+	text-align: center;
+	color: @subColor;
+	.border_1px(right);
+	cursor: pointer;
+}
+.dialog-footer-confirm {
+	height: 100%;
+	flex: 1;
+	text-align: center;
+	color: @primary;
+	cursor: pointer;
+}
+:global {
+	.fade-enter {
+		transform: translate3d(-50%, -50%, 0) scale(.7);
+		opacity: 0;
+	}
+	.fade-leave-active {
+		transform: translate3d(-50%, -50%, 0) scale(.9);
+		opacity: 0;
+	}
+}

@@ -1,0 +1,84 @@
+@btnTextColor: #f08b36; // 橘色
+@subColor: #bfbfbf; // 子标题颜色
+@mainColor: #3c3c3c; // 标题文字颜色
+@textColor: #646566; // 一般文字颜色
+@labelColor: #646566; // label颜色
+@placeholderColor: #c8c9cc; // placeholder颜色
+
+@disabled: #c8c9cc;
+@primary: #57bd6b;
+@danger: #d95a55;
+@info: #3a8af2;
+@warning: #f29c73;
+@default: #ffffff;
+@required: #ee0a24;
+
+// 超出省略
+.climp (@num: 2) {
+	display: -webkit-box;
+	-webkit-box-orient: vertical;
+    -webkit-line-clamp: @num;
+    overflow: hidden;
+}
+
+// 水平方向边框
+.horizontal {
+	transform: scale(0.5);
+	width: 200%;
+	height: 1px;
+	left: 0;
+}
+// 垂直方向边框
+.vertical {
+	transform: scale(0.5);
+	width: 1px;
+	height: 200%;
+	top: 0;
+}
+.direction (@dir) when (@dir = left) {
+	.vertical();
+	left: 0;
+}
+.direction (@dir) when (@dir = right) {
+	.vertical();
+	right: 0;
+}
+.direction (@dir) when (@dir = top) {
+	.horizontal();
+	top: 0;
+}
+.direction (@dir) when (@dir = bottom) {
+	.horizontal();
+	bottom: 0;
+}
+// 设置某个方向一像素边框
+.border_1px(@dir: left, @color: rgba(0,0,0,.2)) {
+	& {
+		position: relative;
+	}
+	&:after {
+		content: '';
+		position: absolute;
+		transform-origin: top left;
+		background-color: @color;
+		.direction(@dir);
+	}
+}
+// 设置所有方向都为一像素边框
+.border_all(@color: rgba(0,0,0,.2), @radius: 0) {
+	& {
+		position: relative;
+	}
+	&:after {
+		content: '';
+		position: absolute;
+		top: 0;
+		left: 0;
+		background-color: @color;
+		width: 200%;
+		height: 200%;
+		transform: scale(.5);
+		border-radius: 2 * @radius;
+		transform-origin: top left;
+	}
+}

@@ -1,0 +1,23 @@
+.animations () {
+  @keyframes myrotate {
+    0% {
+      transform: rotateZ(0deg);
+    }
+    100% {
+      transform: rotateZ(360deg);
+    }
+  }
+  animation: myrotate .8s ease infinite;
+}
+.x-loading {
+  display: inline-block;
+  text-align: center;
+  font-size: 14px;
+  color: @subColor;
+  display: inline-block;
+  >i {
+    transform-origin: 50% 50%;
+    display: inline-block;
+    .animations();
+  }
+}
